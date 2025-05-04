@@ -1,9 +1,9 @@
-const WebSocket = require('ws');
-const http = require('http');
+import WebSocket, { WebSocketServer } from 'ws';
+import http from 'http';
 
 const port = 1234; // Port for the WebSocket server
 const server = http.createServer();
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocketServer({ server });
 
 wss.on('connection', (ws) => {
   console.log('New client connected');
